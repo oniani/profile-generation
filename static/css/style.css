@@ -1,0 +1,30 @@
+body {
+  background-color: rgb(21, 32, 43);
+}
+
+img {
+  width: 250px;
+  height: 250px;
+}
+
+.bg-dark {
+  background-color: rgb(21, 32, 43) !important;
+}
+
+.card {
+  background-color: rgb(21, 32, 43) !important;
+  border: 0.1px solid rgb(38, 50, 60);
+  margin-bottom: 1em;
+}
+
+.card-text {
+  color: white !important;
+}
+
+.tab-content {
+  color: white !important;
+}
+
+.container {
+  width: 50%;
+}

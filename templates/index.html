@@ -1,0 +1,98 @@
+{% extends "base.html" %} {% block content %}
+
+<!-- BRANDING -->
+<h1 class="alert bg-dark text-white h1">FakeBook</h1>
+
+<div class="container form" action="/" method="POST">
+  <!-- PROFILE -->
+  <div class="row alert bg-dark">
+    <div class="col">
+      <figure class="figure">
+        <p class="text-center text-white text-muted small">
+          [ id_{{ user_id }} ]
+        </p>
+        <img
+          src="/static/data/image/profile.jpg"
+          class="figure-img img-fluid img-thumbnail rounded"
+          alt="Profile Picture"
+        />
+        <figcaption class="my-2 h5 text-center text-white">
+          {{ first_name }} {{last_name }}
+        </figcaption>
+        <p class="text-center text-white text-muted medium">
+          @{{ username }}
+        </p>
+      </figure>
+    </div>
+
+    <!-- MENU -->
+    <div class="col mx-5">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            id="bio-tab"
+            data-toggle="tab"
+            href="#bio"
+            role="tab"
+            aria-controls="bio"
+            aria-selected="true"
+            >Bio</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            id="contact-tab"
+            data-toggle="tab"
+            href="#contact"
+            role="tab"
+            aria-controls="contact"
+            aria-selected="false"
+            >Contact</a
+          >
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div
+          class="tab-pane fade show active"
+          id="bio"
+          role="tabpanel"
+          aria-labelledby="bio-tab"
+        >
+          <p class="my-3">{{ bio }}</p>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="contact"
+          role="tabpanel"
+          aria-labelledby="contact-tab"
+        >
+          <p class="my-3">Blog: {{ fake_blog }}</p>
+          <br />
+          <p class="my-3">Twitter: {{ fake_tweet }}</p>
+          <br />
+          <p class="my-3">Instagram (please follow): {{ fake_ig}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POSTS -->
+  {% for post in posts %}
+  <div class="row">
+    <div class="card mx-auto text-center" style="height: 10rem; width: 80rem;">
+      <div class="card-body">
+        <p class="card-text">
+          {{ post.text }}
+        </p>
+        <p class="card-text">
+          <small class="text-muted">Posted on {{ post.updated }}</small>
+        </p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

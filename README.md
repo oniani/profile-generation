@@ -1,2 +1,7 @@
-# profile-generator
-User profile generation (with API)
+# Profile Generator
+
+A simple demonstration of on-the-fly user generation.
+
+## License
+
+[GNU General Public License v3.0](LICENSE)
