@@ -1,6 +1,6 @@
 # Profile Generator
 
-A simple demonstration of on-the-fly user generation.
+A demonstration of a simple, on-the-fly user generation.
 
 ![Generated Profile](./demo/generated-profile.png)
 

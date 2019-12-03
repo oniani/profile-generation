@@ -15,8 +15,7 @@ from util.bio.get_bio import generate_bio
 from util.hobby.get_hobby import generate_hobbies
 from util.name.get_name import generate_full_name
 from util.textgen.get_text import read_text
-
-# from util.thispersondoesnotexist.get_image import save_image
+from util.thispersondoesnotexist.get_image import save_image
 
 APP = Flask(__name__)
 
@@ -48,9 +47,7 @@ def generate_user() -> Dict[str, Union[str, Any]]:
     fake_tweet = f"@fakeig_{username}"
     fake_ig = f"@faketweet_{username}"
 
-    # New image
-    # save_image(PROFILE_PICTURE)
-
+    save_image(PROFILE_PICTURE)
     profile_picture = f"http://localhost:5000/{PROFILE_PICTURE}"
 
     return {
