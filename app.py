@@ -3,7 +3,7 @@
 @date: 2019
 """
 
-from dataclasses import dataclass
+from collections import namedtuple
 from datetime import datetime
 from random import randint, randrange, sample
 from typing import Any, Dict, List, Union
@@ -25,13 +25,7 @@ HOBBIES = "static/data/text/hobby.txt"
 PROFILE_PICTURE = "static/data/image/profile.jpg"
 UNISEX_FIRST_NAMES = "static/data/text/unisex.txt"
 
-
-@dataclass(frozen=True)
-class Post:
-    """Class for representing a post object."""
-
-    text: str
-    updated: str
+Post = namedtuple("Post", ["text", "updated"])
 
 
 def generate_posts(num: int) -> List[Post]:
@@ -98,10 +92,6 @@ def api():
     """API page."""
     user = generate_user()
 
-    jsonified_posts = [
-        {"text": post.text, "updated": post.updated} for post in user["posts"]
-    ]
-
     return jsonify(
         {
             "user_id": user["user_id"],
@@ -109,7 +99,10 @@ def api():
             "first_name": user["first_name"],
             "last_name": user["last_name"],
             "bio": user["bio"],
-            "posts": jsonified_posts,
+            "posts": [
+                {"text": post.text, "updated": post.updated}
+                for post in user["posts"]
+            ],
             "profile_picture": user["profile_picture"],
             "fake_blog": user["fake_blog"],
             "fake_ig": user["fake_ig"],
