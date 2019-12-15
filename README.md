@@ -1,9 +1,9 @@
 # Profile Generator
 
 [A demonstration of a simple, on-the-fly user profile generation:
-http://profile-generator.herokuapp.com](http://profile-generation.herokuapp.com)
+http://profile-generation.herokuapp.com](http://profile-generation.herokuapp.com)
 
-The API is available (here)[http://profile-generation.herokuapp.com/api].
+The API is available [here](http://profile-generation.herokuapp.com/api).
 
 ![Generated Profile](./demo/generated-profile.png)
 
