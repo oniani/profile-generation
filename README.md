@@ -31,4 +31,4 @@ should generate a new profile on every refresh of the page.
 
 ## License
 
-[GNU General Public License v3.0](LICENSE)
+[MIT License](LICENSE)
