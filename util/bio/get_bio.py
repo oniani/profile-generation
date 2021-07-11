@@ -9,9 +9,7 @@ from typing import List
 
 def generate_bio(name: str, hobbies: List[str], path: str) -> str:
     """Generate a user biography."""
-    intro_word = choice(
-        ["Greetings", "Hello", "Hey", "Hi", "Hiya", "Howdy", "Howdy-doody"]
-    )
+    intro_word = choice(["Greetings", "Hello", "Hey", "Hi", "Hiya", "Howdy", "Howdy-doody"])
 
     if choice([True, False]):
         intro_word += " there!"

@@ -96,10 +96,7 @@ def api():
             "first_name": user["first_name"],
             "last_name": user["last_name"],
             "bio": user["bio"],
-            "posts": [
-                {"text": post.text, "updated": post.updated}
-                for post in user["posts"]
-            ],
+            "posts": [{"text": post.text, "updated": post.updated} for post in user["posts"]],
             "profile_picture": user["profile_picture"],
             "fake_blog": user["fake_blog"],
             "fake_ig": user["fake_ig"],
